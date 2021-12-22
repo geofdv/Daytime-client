@@ -12,13 +12,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define BUFFSIZE 150
 
 int
 main(int argc, char *argv[])
 {
+	enum { buffsize = 150 };
 	struct sockaddr_in serv;
-	char buff[BUFFSIZE];
+	char buff[buffsize];
 	int sockfd, n;
 	int numWritten;
 
@@ -33,13 +33,13 @@ main(int argc, char *argv[])
 	serv.sin_addr.s_addr = inet_addr("127.0.0.1");
 	serv.sin_port = htons(13);
 
-	numWritten = sendto(sockfd, buff, BUFFSIZE, 0, (struct sockaddr *) &serv, sizeof(serv));
-	if (numWritten != BUFFSIZE) {
+	numWritten = sendto(sockfd, buff, buffsize, 0, (struct sockaddr *) &serv, sizeof(serv));
+	if (numWritten != buffsize) {
 		perror("sendo");
 		exit(2);
 	}
 
-	n = recvfrom(sockfd, buff, BUFFSIZE, 0, (struct sockaddr *) NULL, (socklen_t *) NULL);
+	n = recvfrom(sockfd, buff, buffsize, 0, (struct sockaddr *) NULL, (socklen_t *) NULL);
 	if (n < 2) {
 		perror("recvfrom");
 		exit(2);
