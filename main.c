@@ -1,5 +1,5 @@
 /*
- * Actually, it's the  daytime client, not a server.
+ * Actually, it's the daytime client, not a server.
  *
  * Send a UDP datagram to the daytime server on some other host.
  * read the reply, and print the time and date on the server.
