@@ -1,2 +1,2 @@
-# server
-network server
+# Time Client
+daytime client
