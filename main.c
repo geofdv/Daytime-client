@@ -16,8 +16,9 @@ int
 main(int argc, char *argv[])
 {
 	enum { buffsize = 150 };
-	struct sockaddr_in serv;
 	char buff[buffsize];
+
+	struct sockaddr_in serv;
 	int sockfd, n;
 	int numWritten;
 
